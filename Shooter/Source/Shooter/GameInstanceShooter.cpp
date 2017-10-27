@@ -19,6 +19,7 @@ void UGameInstanceShooter::Init()
 
 	this->Players = TArray<APawnShooter*>();
 	this->Monsters = TArray<APawnShooter*>();
+	this->Buildings = TArray<APawnBuilding*>();
 	
 	APawn* pawn;
 	APawnShooter* unit;
@@ -62,6 +63,11 @@ const TArray<APawnShooter*> UGameInstanceShooter::GetMonsters() const
 	return this->Monsters;
 }
 
+const TArray<APawnBuilding*> UGameInstanceShooter::GetBuildings() const
+{
+	return this->Buildings;
+}
+
 void UGameInstanceShooter::AddTeamUnit(APawnShooter* unit)
 {
 	int32 teamId = unit->GetTeamID();
@@ -78,6 +84,10 @@ void UGameInstanceShooter::AddTeamUnit(APawnShooter* unit)
 		if (i != teamId)
 			this->Enemies[i].Add(unit);
 	}
+
+	APawnBuilding* building = Cast<APawnBuilding>(unit);
+	if (building)
+		this->Buildings.Add(building);
 }
 
 void UGameInstanceShooter::RemoveTeamUnit(APawnShooter* unit)
@@ -96,4 +106,8 @@ void UGameInstanceShooter::RemoveTeamUnit(APawnShooter* unit)
 		if (i != teamId)
 			this->Enemies[i].Remove(unit);
 	}
+
+	APawnBuilding* building = Cast<APawnBuilding>(unit);
+	if (building)
+		this->Buildings.Remove(building);
 }
