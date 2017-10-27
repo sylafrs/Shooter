@@ -36,6 +36,9 @@ public:
 	
 	UFUNCTION(Category = "AI Tools", BlueprintCallable, meta = (DefaultToSelf))
 	void GoTowardPosition(AActor* actor);
+
+	UFUNCTION(Category = "AI Tools", BlueprintCallable, meta = (DefaultToSelf))
+	void GoFromPosition(AActor* actor);	
 	
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void OnPossessBuilding(APawnBuilding* building);

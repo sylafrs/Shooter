@@ -167,20 +167,20 @@ void APawnShip::TickActor(float DeltaTime, enum ELevelTick TickType, FActorTickF
 // ___________________________________________________ //
 
 
-void APawnShip::CastSpellX() { 
-	this->SpellCasterX->CastSpell(); 
+bool APawnShip::CastSpellX() {
+	return this->SpellCasterX->CastSpell(); 
 }
 
-void APawnShip::CastSpellY() { 
-	this->SpellCasterY->CastSpell(); 
+bool APawnShip::CastSpellY() {
+	return this->SpellCasterY->CastSpell();
 }
 
-void APawnShip::CastSpellA() { 
-	this->SpellCasterA->CastSpell(); 
+bool APawnShip::CastSpellA() {
+	return this->SpellCasterA->CastSpell();
 }
 
-void APawnShip::CastSpellB() { 
-	this->SpellCasterB->CastSpell(); 
+bool APawnShip::CastSpellB() {
+	return this->SpellCasterB->CastSpell();
 }
 
 void APawnShip::CancelSpellX() { 

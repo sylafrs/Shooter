@@ -127,7 +127,7 @@ bool UPCompSpellCaster::CanCast() const
 	return true;
 }
 
-void UPCompSpellCaster::CastSpell()
+bool UPCompSpellCaster::CastSpell()
 {
 	if (this->CanCast())
 	{
@@ -139,7 +139,11 @@ void UPCompSpellCaster::CastSpell()
 		{
 			this->OnCastFinished();
 		}
+
+		return true;
 	}
+
+	return false;
 }
 
 void UPCompSpellCaster::CancelCasting() 

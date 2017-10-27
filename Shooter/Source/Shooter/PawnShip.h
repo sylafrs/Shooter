@@ -121,19 +121,19 @@ public:
 	
 	/** Called to cast the spell that should be associated to the X button */
 	UFUNCTION(Category = "Spell", BlueprintCallable)
-	void CastSpellX();
+	bool CastSpellX();
 
 	/** Called to cast the spell that should be associated to the Y button */
 	UFUNCTION(Category = "Spell", BlueprintCallable)
-	void CastSpellY();
+	bool CastSpellY();
 
 	/** Called to cast the spell that should be associated to the A button */
 	UFUNCTION(Category = "Spell", BlueprintCallable)
-	void CastSpellA();
+	bool CastSpellA();
 
 	/** Called to cast the spell that should be associated to the B button */
 	UFUNCTION(Category = "Spell", BlueprintCallable)
-	void CastSpellB();
+	bool CastSpellB();
 
 	/** Called to cancel the cast of the spell that should be associated to the X button */
 	UFUNCTION(Category = "Spell", BlueprintCallable)

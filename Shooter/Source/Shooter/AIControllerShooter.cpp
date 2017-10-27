@@ -133,3 +133,13 @@ void AAIControllerShooter::GoTowardPosition(AActor* actor)
 	if (possessedShip != nullptr)
 		possessedShip->GoTowardPosition(actor->GetActorLocation());
 }
+
+void AAIControllerShooter::GoFromPosition(AActor* actor)
+{
+	if (actor == nullptr)
+		return;
+
+	APawnShip* const possessedShip = GetShip();
+	if (possessedShip != nullptr)
+		possessedShip->GoFromPosition(actor->GetActorLocation());
+}

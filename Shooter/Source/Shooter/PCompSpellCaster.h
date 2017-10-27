@@ -60,7 +60,7 @@ public:
 
 	// Called to cast the spell
 	UFUNCTION(BlueprintCallable)
-	void CastSpell();
+	bool CastSpell();
 
 	// Called to cancel the casting
 	UFUNCTION(BlueprintCallable)
