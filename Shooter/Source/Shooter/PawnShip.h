@@ -163,11 +163,11 @@ public:
 	UFUNCTION(Category = "Weapon", BlueprintCallable)
 	virtual void StopShootingBasicWeapon();
 		
-	/** Add a rotation command to the Movement component */
+	/** Add a rotation command to the Rotation component */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void LookAt(const FVector& position);	
 	
-	/** Add a rotation command to the Movement component */
+	/** Add a rotation command to the Rotation component */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void LookAtDirection(FVector direction);	
 	
@@ -179,16 +179,25 @@ public:
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void GoTowardPosition(const FVector& position);
 	
-	/** Add a directional command to the Movement component */
+	/** 
+	  * Adds a directional command to MovementComponent
+	  * @param input Directional command to add 
+	  */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void AddInputVector(const FVector& input) override;
 
-	/** Add a rotation command to the Movement component */
+	/** 
+	  * Adds a rotation command (as controller's input) to RotationComponent
+	  * @param input Rotation command to add
+	  */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void AddInputRotationVector(const FVector2D& input) override;
 
-	/** Add a rotation command to the Movement component */
+	/** 
+	  * Adds a rotation command (as world forward) to RotationComponent
+	  * @param input Rotation command to add
+	  */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
-	virtual void AddInputForwardVector(const FVector2D& input) override;
+	virtual void AddInputForwardVector(const FVector2D& input) override; 
 	
 };

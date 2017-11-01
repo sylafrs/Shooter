@@ -86,17 +86,27 @@ public:
 
 	virtual void Dead();
 
-	/** Add a directional command to the Movement component */
+	/** 
+	  * Adds a directional command
+	  * @param input Directional command to add 
+	  */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void AddInputVector(const FVector& input) PURE_VIRTUAL(APawnShooter::AddInputVector, );
 	
-	/** Add a rotation command to the Movement component */
+	/** 
+	  * Adds a rotation command (as controller's input)
+	  * @param input Rotation command to add
+	  */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
 	virtual void AddInputRotationVector(const FVector2D& input) PURE_VIRTUAL(APawnShooter::AddInputRotationVector, );
 
-	/** Add a rotation command to the Movement component */
+	/** 
+	  * Adds a rotation command (as world forward)
+	  * @param input Rotation command to add
+	  */
 	UFUNCTION(Category = "Movement", BlueprintCallable)
-	virtual void AddInputForwardVector(const FVector2D& input) PURE_VIRTUAL(APawnShooter::AddInputForwardVector, );
+	virtual void AddInputForwardVector(const FVector2D& input) PURE_VIRTUAL(APawnShooter::AddInputForwardVector, ); 
+	// This function must be renamed (removing 'Input')
 	
 // Public getters
 public:
